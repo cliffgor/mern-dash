@@ -28,3 +28,13 @@ app.use("/client", clientRoutes)
 app.use("/general", generalRoutes)
 app.use("/management", managementRoutes)
 app.use("/sales", salesRoutes)
+
+// Mongoose Setup
+
+const PORT = process.env.PORT || 9000
+mongoose.connect(process.env.MONGO_URL, {
+useNewUrlParser: true,
+useUnifiedTopology: true
+}).then(() => {
+    app.listen(PORT, () => console.log(`server port ${PORT}`))
+}).catch((error) => console.log(`${error} did not bonging`))
