@@ -1,19 +1,19 @@
 import bodyParser from 'body-parser'
-import clientRoutes from "routes/clients.js"
+import clientRoutes from "./routes/client.js"
 import cors from 'cors'
 import dotenv from 'dotenv'
 import express from 'express'
-import generalRoutes from "routes/general.js"
+import generalRoutes from "./routes/general.js"
 import helmet from 'helmet'
-import managementRoutes from "routes/managements.js"
+import managementRoutes from "./routes/management.js"
 import mongoose from 'mongoose'
 import morgan from 'morgan'
-import salesRoutes from "routes/sales.js"
+import salesRoutes from "./routes/sales.js"
 
 // server Configurations 
 
 dotenv.config()
-const app = express
+const app = express()
 app.use(express.json())
 app.use(helmet())
 app.use(helmet.crossOriginResourcePolicy({policy: "cross-origin"}))
